@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span style="font-size: 55px; margin-left: 40px;">Brasil x Alemanha</span> <br>
+    <button onclick="gol_brasil()" style="margin-left: 57px;">Gol do Brasil</button>
+    <button onclick="gol_alemanha()" style="margin-left: 127px;">Gol da Alemanha</button> <button style="margin-left: 70px;" onclick="reiniciar()">Recomeçar partida</button><br><br>
+    <b style="margin-left: 147px;">Tempo real do jogo:</b>
+    <div style="margin-left: 40px; width: 180px;" id="numero_brasil"></div>
+     <div style="margin-left: 235px; background-color: black; width: 200px;" id="numero_alemanha"></div> <br><br><br>
+    
+
+
+
+
+
+</body>
+</html>
+<script>
+    function gol_brasil(){
+        numero_brasil.innerHTML += "É goooolll do Brasil!!!<br>";
+        numero_brasil.style.color="green";
+    }
+
+    function gol_alemanha(){
+        numero_alemanha.innerHTML += "É goooolll da Alemanha!!!<br>";
+        numero_alemanha.style.color="yellow";
+    }
+
+    function reiniciar(){
+        numero_alemanha.innerHTML="";
+        numero_brasil.innerHTML="";
+
+    }
+
+</script>
