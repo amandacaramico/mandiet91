@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de votos do Zé Buduia: <br> <input id="votos_ze"> <br><br>
+    Quantidade de votos da Maria Bigodenha: <br> <input id="votos_maria"> <br><br>
+    Quantidade de votos em branco: <br> <input id="votos_branco"> <br><br>
+    Quantidade de votos nulo: <br> <input id="votos_nulo"> <br><br>
+    <button onclick="resultado()">Resultado da eleição</button>
+    <br> <br>
+
+    <div id="resu_total"></div><br>
+    <div id="resu_ze"></div>
+    <div id="barra_ze" style="height: 30px; background-color: chartreuse; width: 0;"></div> <br>
+    <div id="resu_maria"></div>
+    <div id="barra_maria" style="height: 30px; background-color: crimson; width: 0;"></div> <br>
+    <div id="resu_branul"></div>
+    <div id="barra_inva" style="height: 30px; background-color: grey; width: 0;"></div>
+
+
+</body>
+</html>
+<script>
+    function resultado(){
+        var ze = Number(votos_ze.value);
+        var maria = Number(votos_maria.value);
+        var bran = Number(votos_branco.value);
+        var nul = Number(votos_nulo.value);
+        var tudo = Number(ze+maria+bran+nul);
+        var porze = ze*100 / tudo;
+        var pormaria = maria*100 / tudo;
+        var inva = bran+nul;
+        var porvabran = inva*100/ tudo;
+        barra_ze.style.width = porze+'%';
+        barra_maria.style.width = pormaria+'%';
+        barra_inva.style.width = porvabran+'%';
+        resu_total.innerHTML = '<b>Total de votos: <u>'+tudo+'</u></b>';
+        resu_ze.innerHTML = 'Zé Ruela: '+ porze+'% ('+ze+' Votos)';
+        resu_maria.innerHTML = 'Maria Bigodenha: '+ pormaria+'% ('+maria+' Votos)';
+        resu_branul.innerHTML = 'Inválidos: '+porvabran+'% ('+inva+' Votos)';
+   
+   
+   
+    }
+
+
+
+
+
+
+
+</script>
