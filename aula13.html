@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora</title>
+</head>
+<body>
+    Primeiro Número: <input style="width: 60px" id="primeiro_numero"><br><br>
+    Segundo Número: <input style="width: 60px;" id="segundo_numero">
+    <br><br> <button onclick="multiplicar()">Multiplicar</button> 
+    <button onclick="dividir()">Dividir</button>
+    <button onclick="subtrair()">Subtrair</button>
+    <button onclick="somar()">Somar</button>
+    <button onclick="potencial()">Potência</button>
+
+</body>
+</html>
+<script>
+    function multiplicar(){
+       var primeiroNumero = Number(primeiro_numero.value);
+       var segundoNumero = Number(segundo_numero.value);
+        alert(`O resultado da multiplicação de ${primeiroNumero} por ${segundoNumero} é ${primeiroNumero * segundoNumero}`);
+    }
+    function dividir(){
+       var n1 = Number(primeiro_numero.value);
+       var n2 = Number(segundo_numero.value);
+        alert(`O resultado da divisão de ${n1} por ${n2} é ${n1 / n2}`);
+    }
+    function subtrair(){
+        var n1 = Number(primeiro_numero.value);
+       var n2 = Number(segundo_numero.value);
+        alert(`O resultado da subtração de ${n1} por ${n2} é ${n1 - n2}`);
+    }
+    function somar(){
+        var n1 = Number(primeiro_numero.value);
+       var n2 = Number(segundo_numero.value);
+        alert(`O resultado da soma de ${n1} por ${n2} é ${n1+ n2}`);
+    }
+    function potencial(){
+        var n1 = Number(primeiro_numero.value);
+       var n2 = Number(segundo_numero.value);
+        alert(`O resultado da potenciação de ${n1} por ${n2} é ${n1 ** n2}`);
+    }
+</script>
