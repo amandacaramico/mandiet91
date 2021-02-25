@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe o valor da passagem de ônibus:<br>
+    <input id="valor_dado"><br><br>
+    Informe a quantidade de viagens feitas por mês:<br>
+    <input id="quant_mes"><br><br>
+    Informe a distância do trabalho até sua casa em <b>Quilômetros</b><br>
+    <input id="distancia_km"><br><br>
+    <button onclick="resultado()">Calcular VT</button><br><br>
+    <div id="frase_final"></div>
+
+
+
+
+</body>
+</html>
+<script>
+    function resultado(){
+        var precoonibus = 0.9*Number(quant_mes.value)*Number(valor_dado.value)
+        var uber = Number(quant_mes.value)*0.1
+        var precouber = Number(distancia_km.value)*0.75
+        var taxi = uber*precouber
+        var final = taxi+precoonibus
+        
+        
+        
+        
+        frase_final.innerHTML = "Você vai gastar R$"+final+' por mês com transporte.'
+
+
+    }
+
+
+
+
+</script>
+
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button style="background-color: rgb(255, 255, 255);" onclick="Pare()"><span style="color: rgb(0, 0, 0);">Carne</span></button>
+    <div style="background-color: red; width: 100px;" id="parar"></div><br>
+    <button style="background-color: rgb(255, 255, 255);" onclick="Pense()"><span style="color: rgb(0, 0, 0);">Legume</span></button> 
+    <div style="background-color: black;width: 260px" id="pensar"></div> <br>
+    <button style="background-color: white;" onclick="Siga()"><span style="color: rgb(0, 0, 0);">Fruta</span></button> 
+    <div style="background-color: white;width: 300px" id="seguir"></div><br>
+
+</body>
+</html>
+<script>
+ function Pare(){
+     // alert("Pare e aguarde");
+    parar.innerHTML = "Muito bom";
+    parar.style.color= "white";
+    pensar.innerHTML="";
+    seguir.innerHTML="";
+}
+function Pense(){
+    // alert("Pense para tomar a melhor decisão");
+    pensar.innerHTML ="Alguns são bom alguns são muito ruims";
+    pensar.style.color= "yellow";
+    parar.innerHTML="";
+    seguir.innerHTML="";
+}
+function Siga(){
+    //alert("Siga em frente!");
+    seguir.innerHTML= "Maçã melhor fruta";
+    seguir.style.color="green";
+    pensar.innerHTML="";
+    parar.innerHTML="";
+}
+</script>

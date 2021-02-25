@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de votos do Zé Buduia: <br> <input id="votos_ze"> <br><br>
+    Quantidade de votos da Maria Bigodenha: <br> <input id="votos_maria"> <br><br>
+    Quantidade de votos em branco: <br> <input id="votos_branco"> <br><br>
+    Quantidade de votos nulo: <br> <input id="votos_nulo"> <br><br>
+    <button onclick="resultado()">Resultado da eleição</button>
+
+
+
+
+</body>
+</html>
+<script>
+    function resultado(){
+    var ze = Number(votos_ze.value);
+    var maria = Number(votos_maria.value);
+    var bran = Number(votos_branco.value);
+    var nul = Number(votos_nulo.value);
+    var tudo = Number(ze+maria+bran+nul);
+    alert(`           Total de votos: ${tudo}
+            Zé Ruela: ${ze* 100 / tudo}% (${ze} votos)
+            Maria Bigodenha: ${maria * 100 / tudo}% (${maria} votos)
+            Inválidos: ${(nul+bran) * 100/tudo }% (${bran+nul} votos) `)
+         }
+
+
+
+
+
+
+
+</script>
