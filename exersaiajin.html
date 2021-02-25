@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe o ki base do guerreirro Sayajin:<br>
+    <input id="ki_dado"><br><br>
+    <button onclick="ssj()" style="float: left;" >SSJ</button>
+    <button onclick="ssj2()" style="float: left;margin-left: 10px;">SSJ2</button>
+    <button onclick="ssj3()" style="margin-left: 10px;" >SSJ3</button>
+    <br><br>
+    <div id="frase_uma"></div><br>
+    <img id="foto_uma" src="sjj.png" style="height: 0;">
+
+
+
+</body>
+</html>
+<script>
+    function ssj(){
+        var primeiro = Number(ki_dado.value)*50
+        frase_uma.innerHTML = "Após se transformar em SSJ, o ki desse Sayajin passa a ser de "+primeiro;
+        foto_uma.src = 'sjj.png'
+        foto_uma.style.height = "400px"
+    }
+    function ssj2(){
+        var segundo = Number(ki_dado.value)*100
+        frase_uma.innerHTML = "Após se transformar em SSJ2, o ki desse Sayajin passa a ser de "+segundo;
+        foto_uma.src = "sjj2.png"
+    }
+    function ssj3(){
+        var terceiro = Number(ki_dado.value)*200
+        frase_uma.innerHTML = "Após se transformar em SSJ3, o ki desse Sayajin passa a ser de "+terceiro;
+        foto_uma.src = 'sjj3.png'
+    }
+
+</script>
