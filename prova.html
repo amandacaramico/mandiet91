@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Projetos</title>
+</head>
+<body>
+    <img src="https://maistreinamento.com.br/blog/wp-content/uploads/2018/09/equipe.jpg" style="height: 250px; float: left;">
+    <img src="https://dmconsultoria.com.br/wp-content/uploads/2016/08/possivel-otimizar-trabalho-equipe.jpg" style="height: 250px; margin-left: 145px;">
+    <br>
+    <div style="margin-left: 85px;">
+        <input id="nome_equipe_um" placeholder="Nome da Equipe" > 
+        <input id="nome_equipe_dois" placeholder="Nome da Equipe" style="margin-left: 340px;">
+        <br><br>
+    
+        <input id="nome_projeto_um" placeholder="Nome do Projeto">
+        <input id="nome_projeto_dois" placeholder="Nome do Projeto" style="margin-left: 340px;">
+        <br><br>
+    
+        <input id="duraçao_um" placeholder="Duração do projeto em dias">
+        <input id="duraçao_dois" placeholder="Duração do projeto em dias" style="margin-left: 340px;">
+        <br><br>
+    
+        <input id="custo_um" placeholder="Custo total do projeto">
+        <input id="custo_dois" placeholder="Custo total do projeto" style="margin-left: 340px;">
+        <br><br>
+    
+        <input id="horas_um" placeholder="Quantidade de horas">
+        <input id="horas_dois" placeholder="Quantidade de horas" style="margin-left: 340px;">
+    </div>
+    <br><br>
+
+    <span style="margin-left: 240px;">Referência de mercado do custo por hora para projeto de TI:</span><br>
+    <input id="referencia" style="margin-left: 340px;" >
+
+    <br><br> <button style="margin-left: 355px;" onclick="analisar()"><b>Analisar os Projetos</b></button>
+        <div id="frase_final"></div><br>
+        <div id="barra_um" style="background-color: red;width: 0px;height: 45px;float: left;"></div>
+        <div id="barra_dois" style="background-color:blue; height: 45px; width: 0px;float: left;"></div>
+    
+     <br><br>
+        <br><br><div id="frase_adicional"></div>
+
+        </body>
+</html>
+<script>
+    function analisar(){
+        var nomeUm = nome_equipe_um.value
+        var nomeDois = nome_equipe_dois.value
+
+        var projetoUm = nome_projeto_um.value
+        var projetoDois = nome_projeto_dois.value
+
+        var custoUm = Number(custo_um.value)
+        var custoDois = Number(custo_dois.value)
+        var horasUm = Number(horas_um.value)
+        var horasDois = Number(horas_dois.value)
+        var diasUm = Number(duraçao_um.value)
+        var diasDois = Number(duraçao_dois.value)
+        var ref = Number(referencia.value)
+        
+        var mediaHoras = horasUm/diasUm
+        var mediaHorasDois = horasDois/diasDois
+        var custoHora = custoUm/horasUm
+        var custoHoraDois = custoDois/horasDois
+        
+        var percentual = custoHora/custoHoraDois *100
+        var somacusto = custoHora+custoHoraDois
+        var larguraUm= (custoHora*1000)/somacusto
+        var larguraDois = (custoHoraDois*1000)/somacusto
+        var referenciaUm = (custoHora/ref)*100
+        var referenciaDois = (custoHoraDois/ref)*100
+        
+
+        frase_final.innerHTML = `<b>Analise de tempo</b><br><br> O projeto ${projetoUm} foi desenvolvido em <b style="color: red;"> ${horasUm}</b> 
+        horas num período de <b style="color: red;"> ${diasUm}</b> dias,
+        portando a equipe ${nomeUm} trabalhou em média <b style="color: red;">${mediaHoras}</b> horas por dia nesse projeto.<br>
+        
+        O projeto ${projetoDois} foi desenvolvido em <b style="color: blue;">${horasDois}</b> horas num período de <b style="color: blue;">${diasDois}</b> dias,
+        portando a equipe ${nomeDois} trabalhou em média <b style="color: blue;">${mediaHorasDois}</b> horas por dia nesse projeto.<br><br><br>
+        
+        <b>Analise de Custos</b><br><br> A equipe ${nomeUm} desenvolveu o projeto ${projetoUm} em <b style="color: red;">${horasUm}</b> horas a um custo de R$ <b style="color: red;">${custoUm}</b>, 
+        portanto o custo por hora desse projeto é R$ <b style="color: red;">${custoHora}</b><br>
+        
+        A equipe ${nomeDois} desenvolveu o projeto ${projetoDois} em <b style="color: blue;">${horasDois}</b> horas a um custo de R$ <b style="color: blue;">${custoDois}</b>, 
+        portando o custo por hora desse projeto é de R$ <b style="color: blue;">${custoHoraDois}</b><br><br><br>
+        <i>Observe que o custo por hora do projeto ${projetoUm} é <b><u>${percentual}%</u></b> do custo por hora do projeto ${projetoDois}</i>`
+
+        
+        barra_um.style.width = larguraUm+'px'
+        barra_dois.style.width = larguraDois+'px'
+
+        
+        frase_adicional.innerHTML=`<b>Análise de referência</b><br><br>
+        O projeto ${projetoUm} com custo por hora de R$<b style="color: red;">${custoHora}</b> é <b style="color: red;">${referenciaUm}</b>% em relação a referência de mercado ${referencia.value}<br>
+        O projeto ${projetoDois} com custo por hora de R$ <b style="color: blue;">${custoHoraDois}</b> é <b style="color: blue;">${referenciaDois}</b>% em relação a referência de mercado ${referencia.value}<br>`
+    }
+</script>
+
+
